@@ -674,7 +674,7 @@ const comment = (() => {
 })();
 
 document.getElementById('name_men').innerHTML = "Duy Khuong";
-document.getElementById('name_girl').innerHTML = "bbb";
+document.getElementById('name_girl').innerHTML = "Thi No";
 document.getElementById('date_wedding').innerHTML = "Sunday, November 25, 2029";
 document.getElementById('groom_family').innerHTML = "Sunday, 10.00 AM";
 document.getElementById('bride_family').innerHTML = "Sunday, 13.00 AM";
