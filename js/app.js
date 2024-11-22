@@ -510,11 +510,12 @@ const comment = (() => {
         const hours = date.getHours();
         const minutes = date.getMinutes();
 
-        await request('POST', '/api/getVersion/comment')
+        await request('POST', '/api/getVersion/comment/comment')
             .token(token)
             .body({
                 nama: nama,
                 hadir: hadir == 1,
+                like: 1,
                 komentar: komentar,
                 created_at: `${year}-${month}-${day} ${hours}:${minutes}`
             })
@@ -614,7 +615,7 @@ const comment = (() => {
             return;
         }
 
-        await request('GET', "/api/getVersion/comment").token(token)
+        await request('GET', "/api/getVersion/comment/comment").token(token)
             .then((res) => {
                 // console.log("A", res);
                 UCAPAN.innerHTML = null;
