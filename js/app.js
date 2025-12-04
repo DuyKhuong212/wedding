@@ -557,10 +557,11 @@ const comment = (() => {
 
     // OK
     const innerComment = (data) => {
+        // <button style="font-size: 0.8rem;" onclick="" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0">Reply</button>
         return `
         <div class="d-flex flex-wrap justify-content-between align-items-center">
             <div class="d-flex flex-wrap justify-content-start align-items-center">
-                <button style="font-size: 0.8rem;" onclick="" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0">Reply</button>
+                
                 ${owns.has(data.uuid)
                 ? `
                 <button style="font-size: 0.8rem;" onclick="comment.edit(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0 ms-1">Ubah</button>
@@ -569,7 +570,7 @@ const comment = (() => {
             </div>
             <button style="font-size: 0.8rem;" onclick="like.like(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-2 py-0 px-0">
                 <div class="d-flex justify-content-start align-items-center">
-                    <p class="my-0 mx-1" data-suka="${data.like}">${data.like} Khuong</p>
+                    <p class="my-0 mx-1" data-suka="${data.like}">${data.like} Quynh&Nam</p>
                     <i class="py-1 me-1 p-0 ${likes.has(data.uuid) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'}"></i>
                 </div>
             </button>

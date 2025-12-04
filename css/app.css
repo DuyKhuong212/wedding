@@ -137,11 +137,12 @@ footer {
 }
 
 .fh5co-cover {
-    height: 1000px;
+    height: 950px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .fh5co-cover .overlay {
     z-index: 0;
@@ -225,9 +226,14 @@ footer {
 .button-wedding {
     padding-top: 150px;
 }
-
+.mobile-date {
+    font-size: 36px;
+}
 @media (max-width: 768px) {
     .button-wedding {
         padding-top: 95px;
+    }
+    .mobile-date {
+        font-size: 24px;
     }
 }
