@@ -96,16 +96,16 @@ const util = (() => {
             .replace(/'/g, '&#039;');
     };
 
-    document.getElementById('copyButton').addEventListener('click', function () {
-        var textToCopy = this.getAttribute('data-nomera');
-        navigator.clipboard.writeText(textToCopy)
-            .then(function () {
-                alert('Text copied to clipboard: ' + textToCopy);
-            })
-            .catch(function (err) {
-                console.error('Unable to copy text to clipboard', err);
-            });
-    });
+    // document.getElementById('copyButton').addEventListener('click', function () {
+    //     var textToCopy = this.getAttribute('data-nomera');
+    //     navigator.clipboard.writeText(textToCopy)
+    //         .then(function () {
+    //             alert('Text copied to clipboard: ' + textToCopy);
+    //         })
+    //         .catch(function (err) {
+    //             console.error('Unable to copy text to clipboard', err);
+    //         });
+    // });
 
     const salin = (btn, msg = 'Tersalin', timeout = 1500) => {
         navigator.clipboard.writeText(btn.getAttribute('data-nomer'));
