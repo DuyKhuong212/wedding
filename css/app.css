@@ -7,7 +7,13 @@ body {
     padding: 0 !important;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background-color: #d7a6aa !important;
+    /* background-color: #d7a6aa !important; */
+    background-color: white !important;
+}
+
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -54,7 +60,8 @@ body::-webkit-scrollbar {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: #fbcfcf;
+    /* background-color: #fbcfcf; */
+    background-color: white !important;
     z-index: 1056 !important;
 }
 
@@ -99,13 +106,15 @@ body::-webkit-scrollbar {
 }
 
 .dark-section {
-    background-color: #fbcfcf !important;
+    /* background-color: #fbcfcf !important; */
+    background-color: white !important;
     margin-top: -0.4rem;
     margin-bottom: -0.4rem;
 }
 
 footer {
-    background-color: #fbcfcf !important;
+    /* background-color: #fbcfcf !important; */
+    background-color: white !important;
     margin-top: -0.4rem;
     padding-bottom: 4rem;
 }
@@ -147,3 +156,78 @@ footer {
     position: relative;
     z-index: 10;
   }
+
+  .wedding-btn {
+    background-color: #ff80b5; /* màu hồng pastel */
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: floating 2.5s ease-in-out infinite;
+}
+
+/* hover sáng hơn */
+.wedding-btn:hover {
+    background-color: #ff99c8;
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng bong bóng lên xuống */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* PC */
+.image-box {
+    width: 50%;
+    height: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .image-box {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Button hồng + hiệu ứng bong bóng */
+.wedding-btn {
+    background-color: #ff7ebf !important;
+    color: white !important;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.3rem;
+    border-radius: 40px;
+    animation: floatBtn 3s ease-in-out infinite;
+}
+
+/* Mobile button */
+@media (max-width: 768px) {
+    .wedding-btn {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+}
+
+@keyframes floatBtn {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+.button-wedding {
+    padding-top: 150px;
+}
+
+@media (max-width: 768px) {
+    .button-wedding {
+        padding-top: 95px;
+    }
+}

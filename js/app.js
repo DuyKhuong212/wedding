@@ -130,14 +130,27 @@ const util = (() => {
         let countDownDate = (new Date(document.getElementById('tampilan-waktu').getAttribute('data-waktu').replace(' ', 'T'))).getTime();
 
         setInterval(() => {
-            let distance = Math.abs(countDownDate - (new Date()).getTime());
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
 
-            document.getElementById('hour').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('minute').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('second').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('tik').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
-    };
+            // Ngày
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // Giờ
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            // Phút
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Giây
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('hour').innerText = days;
+            document.getElementById('minute').innerText = hours;
+            document.getElementById('second').innerText = minutes;
+            document.getElementById('tik').innerText = seconds;
+            }, 1000);
+        };
 
     const play = (btn) => {
         if (btn.getAttribute('data-status') !== 'true') {
@@ -275,6 +288,8 @@ const progress = (() => {
             });
         }
     });
+
+    // document.getElementById('white-overlay').style.display = 'block';
 })();
 
 const audio = (() => {
@@ -674,11 +689,11 @@ const comment = (() => {
     };
 })();
 
-document.getElementById('name_men').innerHTML = "Duy Khuong";
-document.getElementById('name_girl').innerHTML = "Thi No";
-document.getElementById('date_wedding').innerHTML = "Sunday, November 25, 2029";
-document.getElementById('groom_family').innerHTML = "Sunday, 10.00 AM";
-document.getElementById('bride_family').innerHTML = "Sunday, 13.00 AM";
+document.getElementById('name_men').innerHTML = "Quang Nam";
+document.getElementById('name_girl').innerHTML = "Nguyễn Quỳnh";
+document.getElementById('date_wedding').innerHTML = "Thứ 7, Tháng 1, 24, 2026";
+document.getElementById('groom_family').innerHTML = "Thứ 7, 8.00 AM";
+document.getElementById('bride_family').innerHTML = "Thứ 7, 10.00 AM";
 var newHrefValue = "https://www.google.com/maps/place/21%C2%B002'04.4%22N+105%C2%B047'16.7%22E/@21.0344456,105.7879121,21z/data=!4m4!3m3!8m2!3d21.034563!4d105.787959?hl=vi-VN&entry=ttu";
 document.getElementById("myLink").setAttribute("href", newHrefValue);
 
