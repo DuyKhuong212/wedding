@@ -11,7 +11,8 @@ body {
     background-color: white !important;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden !important;
     width: 100%;
 }
@@ -122,6 +123,7 @@ footer {
 .black-color {
     color: black !important;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -143,8 +145,9 @@ footer {
     position: relative;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  .fh5co-cover .overlay {
+}
+
+.fh5co-cover .overlay {
     z-index: 0;
     position: absolute;
     bottom: 0;
@@ -152,14 +155,16 @@ footer {
     left: 0;
     right: 0;
     background: rgba(147, 147, 147, 0.5);
-  }
-  .fh5co-cover > .fh5co-container {
+}
+
+.fh5co-cover>.fh5co-container {
     position: relative;
     z-index: 10;
-  }
+}
 
-  .wedding-btn {
-    background-color: #ff80b5; /* màu hồng pastel */
+.wedding-btn {
+    background-color: #ff80b5;
+    /* màu hồng pastel */
     color: white;
     padding: 15px 35px;
     border-radius: 50px;
@@ -178,9 +183,17 @@ footer {
 
 /* Hiệu ứng bong bóng lên xuống */
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* PC */
@@ -208,6 +221,97 @@ footer {
     animation: floatBtn 3s ease-in-out infinite;
 }
 
+@keyframes floatBtn {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.button-wedding {
+    padding-top: 150px;
+}
+
+.mobile-date {
+    font-size: 36px;
+}
+
+@media (max-width: 768px) {
+    .button-wedding {
+        padding-top: 95px;
+    }
+
+    .mobile-date {
+        font-size: 24px;
+    }
+}
+
+.film-container {
+    position: relative;
+    overflow: hidden;
+    background: #111 !important;
+    border: 8px solid #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0008;
+}
+
+/* Lỗ phim (sprocket holes) bên trái */
+.holes-left,
+.holes-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.holes-left {
+    left: 0;
+}
+
+.holes-right {
+    right: 0;
+}
+
+.hole {
+    width: 14px;
+    height: 14px;
+    background: #000;
+    border-radius: 3px;
+    border: 2px solid #555;
+}
+
+/* Phần chứa ảnh chạy */
+.film-strip {
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 0;
+}
+
+.film-strip img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #000;
+    box-shadow: inset 0 0 3px #000;
+    border-radius: 4px;
+}
+
 /* Mobile button */
 @media (max-width: 768px) {
     .wedding-btn {
@@ -215,25 +319,13 @@ footer {
         font-size: 1.1rem;
         padding: 12px 20px;
     }
-}
 
-@keyframes floatBtn {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-12px); }
-    100% { transform: translateY(0); }
-}
-
-.button-wedding {
-    padding-top: 150px;
-}
-.mobile-date {
-    font-size: 36px;
-}
-@media (max-width: 768px) {
-    .button-wedding {
-        padding-top: 95px;
-    }
-    .mobile-date {
-        font-size: 24px;
+    .film-strip img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border: 4px solid #000;
+        box-shadow: inset 0 0 3px #000;
+        border-radius: 4px;
     }
 }

@@ -31,6 +31,28 @@ const storage = (table) => {
     };
 };
 
+const film = document.getElementById("filmList");
+const wrap = document.getElementById("wrap");
+
+// Nhân đôi để chạy vô hạn
+film.innerHTML += film.innerHTML;
+
+let pos = 0;
+let speed = 0.7;
+
+function loop() {
+    pos += speed;
+    if (pos >= film.scrollHeight / 2) pos = 0;
+    film.style.transform = `translateY(${-pos}px)`;
+    requestAnimationFrame(loop);
+}
+
+requestAnimationFrame(loop);
+
+// Hover dừng
+wrap.addEventListener("mouseenter", () => speed = 0);
+wrap.addEventListener("mouseleave", () => speed = 0.7);
+
 const request = (method, path) => {
 
     let url = document.querySelector('body').getAttribute('data-url');
@@ -149,8 +171,8 @@ const util = (() => {
             document.getElementById('minute').innerText = hours;
             document.getElementById('second').innerText = minutes;
             document.getElementById('tik').innerText = seconds;
-            }, 1000);
-        };
+        }, 1000);
+    };
 
     const play = (btn) => {
         if (btn.getAttribute('data-status') !== 'true') {
