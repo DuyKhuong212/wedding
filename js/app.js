@@ -338,82 +338,82 @@ const audio = (() => {
     };
 })();
 
-const pagination = (() => {
+// const pagination = (() => {
 
-    const perPage = 10;
-    let pageNow = 0;
-    let resultData = 0;
+//     const perPage = 10;
+//     let pageNow = 0;
+//     let resultData = 0;
 
-    const page = document.getElementById('page');
-    const prev = document.getElementById('previous');
-    const next = document.getElementById('next');
+//     const page = document.getElementById('page');
+//     const prev = document.getElementById('previous');
+//     const next = document.getElementById('next');
 
-    const disabledPrevious = () => {
-        prev.classList.add('disabled');
-    };
+//     const disabledPrevious = () => {
+//         prev.classList.add('disabled');
+//     };
 
-    const disabledNext = () => {
-        next.classList.add('disabled');
-    };
+//     const disabledNext = () => {
+//         next.classList.add('disabled');
+//     };
 
-    const buttonAction = async (button) => {
-        let tmp = button.innerHTML;
-        button.disabled = true;
-        button.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span>Loading...`;
-        await comment.ucapan();
-        document.getElementById('daftar-ucapan').scrollIntoView({ behavior: 'smooth' });
-        button.disabled = false;
-        button.innerHTML = tmp;
-    };
+//     const buttonAction = async (button) => {
+//         let tmp = button.innerHTML;
+//         button.disabled = true;
+//         button.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span>Loading...`;
+//         await comment.ucapan();
+//         document.getElementById('daftar-ucapan').scrollIntoView({ behavior: 'smooth' });
+//         button.disabled = false;
+//         button.innerHTML = tmp;
+//     };
 
-    return {
-        getPer: () => {
-            return perPage;
-        },
-        getNext: () => {
-            return pageNow;
-        },
-        reset: async () => {
-            pageNow = 0;
-            resultData = 0;
-            page.innerText = 1;
-            next.classList.remove('disabled');
-            await comment.ucapan();
-            disabledPrevious();
-        },
-        setResultData: (len) => {
-            resultData = len;
-            if (resultData < perPage) {
-                disabledNext();
-            }
-        },
-        previous: async (button) => {
-            if (pageNow < 0) {
-                disabledPrevious();
-            } else {
-                pageNow -= perPage;
-                disabledNext();
-                await buttonAction(button);
-                page.innerText = parseInt(page.innerText) - 1;
-                next.classList.remove('disabled');
-                if (pageNow <= 0) {
-                    disabledPrevious();
-                }
-            }
-        },
-        next: async (button) => {
-            if (resultData < perPage) {
-                disabledNext();
-            } else {
-                pageNow += perPage;
-                disabledPrevious();
-                await buttonAction(button);
-                page.innerText = parseInt(page.innerText) + 1;
-                prev.classList.remove('disabled');
-            }
-        }
-    };
-})();
+//     return {
+//         getPer: () => {
+//             return perPage;
+//         },
+//         getNext: () => {
+//             return pageNow;
+//         },
+//         reset: async () => {
+//             pageNow = 0;
+//             resultData = 0;
+//             page.innerText = 1;
+//             next.classList.remove('disabled');
+//             await comment.ucapan();
+//             disabledPrevious();
+//         },
+//         setResultData: (len) => {
+//             resultData = len;
+//             if (resultData < perPage) {
+//                 disabledNext();
+//             }
+//         },
+//         previous: async (button) => {
+//             if (pageNow < 0) {
+//                 disabledPrevious();
+//             } else {
+//                 pageNow -= perPage;
+//                 disabledNext();
+//                 await buttonAction(button);
+//                 page.innerText = parseInt(page.innerText) - 1;
+//                 next.classList.remove('disabled');
+//                 if (pageNow <= 0) {
+//                     disabledPrevious();
+//                 }
+//             }
+//         },
+//         next: async (button) => {
+//             if (resultData < perPage) {
+//                 disabledNext();
+//             } else {
+//                 pageNow += perPage;
+//                 disabledPrevious();
+//                 await buttonAction(button);
+//                 page.innerText = parseInt(page.innerText) + 1;
+//                 prev.classList.remove('disabled');
+//             }
+//         }
+//     };
+// })();
 
 const session = (() => {
 
@@ -565,7 +565,7 @@ const comment = (() => {
             });
 
         if (isSuccess) {
-            await pagination.reset();
+            // await pagination.reset();
             document.getElementById('daftar-ucapan').scrollIntoView({ behavior: 'smooth' });
             resetForm();
         }
@@ -658,7 +658,7 @@ const comment = (() => {
                 // console.log("A", res);
                 UCAPAN.innerHTML = null;
                 res.forEach((data) => UCAPAN.appendChild(renderCard(data)));
-                pagination.setResultData(res.length);
+                // pagination.setResultData(res.length);
 
                 if (res.length == 0) {
                     UCAPAN.innerHTML = `<div class="h6 text-center">Tidak ada data</div>`;
@@ -717,6 +717,6 @@ document.getElementById('name_girl').innerHTML = "Nguyễn Quỳnh";
 document.getElementById('date_wedding').innerHTML = "Thứ 7, Tháng 1, 24, 2026";
 document.getElementById('groom_family').innerHTML = "Thứ 7, 8.00 AM";
 document.getElementById('bride_family').innerHTML = "Thứ 7, 10.00 AM";
-var newHrefValue = "https://www.google.com/maps/place/21%C2%B002'04.4%22N+105%C2%B047'16.7%22E/@21.0344456,105.7879121,21z/data=!4m4!3m3!8m2!3d21.034563!4d105.787959?hl=vi-VN&entry=ttu";
-document.getElementById("myLink").setAttribute("href", newHrefValue);
+var newHrefValue = "https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+THCS+Y%C3%AAn+L%E1%BA%ADp/@21.2903778,105.4808934,151m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3134f23f2322275b:0x8dbfaa2b839d63bc!2zWcOqbiBM4bqhcCwgVsSpbmggVMaw4budbmcsIFbEqW5oIFBow7pj!3b1!8m2!3d21.2946818!4d105.4800382!16s%2Fg%2F1hb_gyxdl!3m5!1s0x3134f23930fe313f:0xac51c0e64fa72d3a!8m2!3d21.2902544!4d105.4812431!16s%2Fg%2F11b6dphk0f?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D";
+document.getElementById("myLinkWomen").setAttribute("href", newHrefValue);
 
