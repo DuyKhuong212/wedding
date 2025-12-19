@@ -312,6 +312,10 @@ footer {
     border-radius: 4px;
 }
 
+.image_main {
+    margin-top: 100px;
+}
+
 /* Mobile button */
 @media (max-width: 768px) {
     .wedding-btn {
@@ -327,5 +331,9 @@ footer {
         border: 4px solid #000;
         box-shadow: inset 0 0 3px #000;
         border-radius: 4px;
+    }
+
+    .image_main {
+        margin-top: 0px;
     }
 }
