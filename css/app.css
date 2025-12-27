@@ -317,6 +317,11 @@ footer {
     margin-top: 100px;
 }
 
+.image_main_padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 #home {
     background-image: url("https://res.cloudinary.com/dl0etyt5a/image/upload/v1766817720/anh2_qr3xb5.jpg");
 }
@@ -354,10 +359,27 @@ footer {
     }
 
     .text-name {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .text-date {
         font-size: 1rem;
+    }
+
+    .image_main_padding {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .img-crop {
+        width: 12rem;
+        height: 12rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .image_main {
+        margin-top: 100px;
     }
 }
