@@ -262,6 +262,12 @@ footer {
     box-shadow: 0 0 20px #0008;
 }
 
+#wrap,
+#filmList {
+  pointer-events: none;
+  touch-action: none;
+}
+
 /* Lỗ phim (sprocket holes) bên trái */
 .holes-left,
 .holes-right {

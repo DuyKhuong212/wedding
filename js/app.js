@@ -714,7 +714,7 @@ const comment = (() => {
 
 document.getElementById('name_men').innerHTML = "Quang Nam";
 document.getElementById('name_girl').innerHTML = "Nguyễn Quỳnh";
-document.getElementById('date_wedding').innerHTML = "Thứ 7, Tháng 1, 24, 2026";
+document.getElementById('date_wedding').innerHTML = "Ngày 23 và 24, tháng 1, 2026";
 document.getElementById('groom_family').innerHTML = "Thứ 7, 8.00 AM";
 document.getElementById('bride_family').innerHTML = "Thứ 7, 10.00 AM";
 var newHrefValue = "https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+THCS+Y%C3%AAn+L%E1%BA%ADp/@21.2903778,105.4808934,151m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3134f23f2322275b:0x8dbfaa2b839d63bc!2zWcOqbiBM4bqhcCwgVsSpbmggVMaw4budbmcsIFbEqW5oIFBow7pj!3b1!8m2!3d21.2946818!4d105.4800382!16s%2Fg%2F1hb_gyxdl!3m5!1s0x3134f23930fe313f:0xac51c0e64fa72d3a!8m2!3d21.2902544!4d105.4812431!16s%2Fg%2F11b6dphk0f?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D";
